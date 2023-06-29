@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Film</title>
+<link rel="stylesheet" href="/css/stile.css" />
+
+</head>
+
+<body>
+  <nav>
+   <div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+ </nav>	
+
+  <header>
+	<div>
+		<a href="/"><img src="/images/logo-siw.png" width="30%" /></a>
+	</div>
+ </header>
+	
+<section>
+
+  <p>
+	<img th:src="'/photos/' +${movie.id}+ '/' +${movie.urlImage}" width="100%">
+  </p>
+
+<div id="flex-container">
+	<div class="col">
+	  <h3>Dettagli Film</h3>
+	   <hr>
+	     <div th:if="${movie}">
+		   <h3><span th:text="${movie.title}">Up!</span> </h3>
+		   <h4><span th:text="'(' + ${movie.year} + ')'">2000</span> </h4>
+	    </div>
+    </div>	
+    
+     <div th:unless="${movie}">Non esiste</div>
+	
+
+
+    <div class="col">      
+     <h3>Regista </h3>
+     <hr>
+     <div th:if="${movie.director}">
+     
+     <a th:href="@{'/artist' + '/'+ ${movie.director.id}}" 
+        th:text=" ${movie.director.name} +' ' +${movie.director.surname}" ></a>
+   </div>
+   </div>
+   
+   <div class="col"> 
+     <h3>Attori </h3>
+      <hr>
+        <div th:if="${movie.actors==null || movie.actors.isEmpty()}">Non ci sono artisti nel film</div>
+          <ul>
+             <li th:each="artist : ${movie.actors}">
+               <a th:href="@{'/artist' + '/'+ ${artist.id}}"
+            th:text="${artist.name} +' ' + ${artist.surname}"></a>
+            </li>
+         </ul>
+   
+      </div>
+
+</div>	
+</section>
+
+ <section>
+	<h3>Recensioni </h3>
+		
+		<h2><a th:href="@{'/reviewForm'+ '/' + ${movie.id}}">Scrivi una recensione</a></h2>
+		<hr>		
+	<div id="myDIV">
+     <div id="content">     
+     <div th:if="${movie.reviews==null || movie.reviews.isEmpty()}">Non ci sono recensioni</div>     
+		<ul>
+          <li th:each="review : ${movie.reviews}">  
+           <div th:text="${review.userName}">username 
+           <span>
+           <a th:href="@{'/admin/cancellaRecensione/' + ${movie.id}}">Cancella recensione</a>
+           </span>
+            </div>            
+       <div> Valutazione : <span th:text="${review.movieRating}">movie rating</span></div>
+    <div th:text="${review.title} + ':' + ${review.content}">titolo e recensione </div>
+    <div><a th:href="@{'/admin/cancellaRecensione' +'/' + ${movie.id} +'/'+ ${review.id}}">
+          Cancella recensione</a></div>
+   </li>  
+  </ul>	
+	</div>
+	</div>
+	</section>
+	
+	
+
+
+ <footer></footer>
+</body>
+</html>

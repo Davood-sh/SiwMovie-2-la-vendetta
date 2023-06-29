@@ -1,0 +1,169 @@
+body { 
+    font-family: "Geneva";
+    background-color: #CEF2FF;
+    color:dimgrey;
+}
+
+a { 
+	text-decoration: none; 
+    color: dimgrey;
+}
+
+a:hover { 
+	text-decoration: underline; 
+	color: darkgray;
+}
+
+label {
+	width: 8em;
+	display: inline-block;
+}
+
+header {
+  background-color: lightskyblue;
+  border: 2px solid lightskyblue;
+  border-radius: 8px;
+  color: white;
+  height: 100px;
+}
+nav {
+  font-family: "Geneva";
+  border: 2px solid royalblue;
+  border-radius: 8px;
+  background-color:royalblue;
+  color: white;
+  height: 2.5em;
+  margin-bottom: 0.3em;
+  padding: 0.4em;
+  text-align: right; 
+  
+}
+
+header a { 
+	text-decoration: none; 
+    color: white;
+    font-size: 0.6em;
+}
+
+section {
+  background-color: #CEF2FF;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 50px 200px;
+}
+
+section.col {
+  background-color: gray;
+  border: 2px solid black;
+  border-radius: 8px;
+  margin: 50px 200px;
+}
+
+#flex-container {
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+}
+#flex-contain {
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+}
+p {
+  background-color: silver;
+  height: 200px;
+  margin-bottom: 75px;
+}
+p.col {
+  background-color: silver;
+  height: 400px;
+  margin: 100px 230px;
+  margin-bottom: 75px;
+}
+
+div.col { 
+    
+  background-color: #B8F5E5;
+  border: 2px solid black;
+  border-radius: 8px;
+  width: calc(50% - 5px );
+}
+#myDIV {
+  height: 250px;
+  width: 1100px;
+  overflow: auto;
+  background: #B8F5E5;
+}
+
+#content {
+  margin:50px;
+  height: 800px;
+  width: 2000px;
+  background-color: #B8F5E5;
+}
+input[type=text], select {
+  background: #E4F8FF;	
+  width: 100%;
+  padding: 10px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password], select {
+  background: #E4F8FF;	
+  width: 100%;
+  padding: 10px 20px;
+  margin: 4px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.input {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+button {
+  background-color: royalblue;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px
+  margin: 4px 2px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: lightskyblue; 
+}
+
+
+footer {
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 8px;
+  height: 100px;
+}

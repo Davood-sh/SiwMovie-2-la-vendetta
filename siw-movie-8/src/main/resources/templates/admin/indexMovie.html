@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		SiwMovie - Gestione Film
+	</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	<nav>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</nav>
+	
+   <header>
+	<div>
+		<a href="/"><img src="/images/logo-siw.png" width="30%" /></a>
+	</div>
+  </header>
+
+	<h1>Gestione Film</h1>
+	<div>
+		<a href="/admin/formNewMovie">Inserisci i dati di un film</a>
+	</div>
+	<div>
+		<a href="/admin/manageMovies">Gestisci i film</a>
+	</div>
+	<div>
+		<a href="/formSearchMovies">Cerca film per anno</a>
+	</div>
+</body>
+
+</html>
